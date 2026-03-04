@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Kinestop (Motion Sickness Reducer)",
+  "version": "1.0",
+  "description": "Displays stabilization dots over any website to reduce motion sickness, driven by your phone sensors.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["peerjs.min.js", "content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["peerjs.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            width: 300px;
+            padding: 15px;
+            background: #0A0A0A;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .setting {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            color: #ccc;
+            margin-bottom: 4px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            background: #222;
+            color: #fff;
+            border: 1px solid #444;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #fff;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-top: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #eee;
+        }
+
+        .id-box {
+            background: #111;
+            padding: 10px;
+            border: 1px dashed #444;
+            border-radius: 4px;
+            text-align: center;
+            margin-bottom: 8px;
+            font-family: monospace;
+            font-size: 18px;
+            color: #00FFFF;
+            letter-spacing: 2px;
+        }
+
+        .status {
+            margin-bottom: 15px;
+            font-size: 12px;
+            text-align: center;
+            color: #888;
+            font-weight: 500;
+        }
+
+        .info {
+            font-size: 11px;
+            color: #777;
+            line-height: 1.4;
+            margin-top: 15px;
+            border-top: 1px solid #333;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Kinestop</h3>
+    <div class="status" id="status-text">Disconnected (Using Mouse Sim)</div>
+
+    <div class="setting" id="id-container" style="display:none;">
+        <label>Your Laptop ID:</label>
+        <div class="id-box" id="laptop-id">Loading...</div>
+        <p style="font-size: 11px; color:#aaa; margin:0; text-align:center;">Open your phone tracker app & connect.</p>
+    </div>
+
+    <button id="btn-connect">Connect Phone Sensors</button>
+
+    <div class="setting" style="margin-top:20px;">
+        <label>Mode</label>
+        <select id="mode-select">
+            <option value="stabilization">Stabilization (Drift)</option>
+            <option value="counter">Counter-Motion</option>
+            <option value="neutral">Neutral (Breathing)</option>
+        </select>
+    </div>
+
+    <div class="setting">
+        <label>Dots: <span id="dot-count-val">8</span></label>
+        <input type="range" id="dot-count" min="3" max="20" value="8">
+    </div>
+
+    <div class="setting">
+        <label>Size: <span id="dot-size-val">15</span>px</label>
+        <input type="range" id="dot-size" min="5" max="40" value="15">
+    </div>
+
+    <div class="info">
+        Without a phone connected, dots will move gently when you move your mouse to simulate continuous vestibular
+        adaptation.
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
